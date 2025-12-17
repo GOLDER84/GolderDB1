@@ -2,7 +2,7 @@
 
 namespace UniDB.Engine.Executive_Commands;
 
-public class FilterCommand
+public class FilterCommand : IExecutableCommand
 {
     StorageManagement _storageManagement = StorageManagement.GetInstance();
     
