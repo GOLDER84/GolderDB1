@@ -40,5 +40,10 @@ public class StorageManagement
 
         return false;
     }
-    
+
+    public Student? FindById(int id)
+    {
+        // return _arrayCollection.FindById(id);
+        return _linkedListCollection.FindById(id);
+    }
 }
