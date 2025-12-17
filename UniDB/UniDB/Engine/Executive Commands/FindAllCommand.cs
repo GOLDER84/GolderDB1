@@ -2,7 +2,7 @@
 
 namespace UniDB.Engine.Executive_Commands;
 
-public class FindAllCommand
+public class FindAllCommand : IExecutableCommand
 {
     public StorageManagement _storageManagement = StorageManagement.GetInstance();
 
