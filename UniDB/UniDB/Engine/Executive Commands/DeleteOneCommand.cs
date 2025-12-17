@@ -2,7 +2,7 @@
 
 namespace UniDB.Engine.Executive_Commands;
 
-public class DeleteOneCommend
+public class DeleteOneCommand
 {
     private StorageManagement _storageManagement = StorageManagement.GetInstance();
 

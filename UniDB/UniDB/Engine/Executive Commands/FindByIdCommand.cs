@@ -2,7 +2,7 @@
 
 namespace UniDB.Engine.Executive_Commands;
 
-public class FindByIdCommend
+public class FindByIdCommand
 {
     public StorageManagement _storageManagement = StorageManagement.GetInstance();
     public void Execute(Command command)

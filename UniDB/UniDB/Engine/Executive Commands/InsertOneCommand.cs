@@ -3,7 +3,7 @@ using UniDB.Storage;
 
 namespace UniDB.Engine.Executive_Commands;
 
-public class InsertOneCommend
+public class InsertOneCommand
 {
     private StorageManagement _storageManagement = StorageManagement.GetInstance();
     public void Execute(Command command)
