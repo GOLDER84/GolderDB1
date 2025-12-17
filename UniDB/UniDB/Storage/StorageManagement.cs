@@ -5,12 +5,26 @@ namespace UniDB.Storage;
 
 public class StorageManagement
 {
+    private static StorageManagement? _instance;
+    private static readonly object _lock = new object();
     
     private ArrayCollection _arrayCollection = new ArrayCollection();
     private LinkedListCollection _linkedListCollection = new LinkedListCollection();
+    private StorageManagement() { }  // Constructor خصوصی
+
     public static StorageManagement GetInstance()
     {
-        return new StorageManagement();
+        if (_instance == null)
+        {
+            lock (_lock)
+            {
+                if (_instance == null)
+                {
+                    _instance = new StorageManagement();
+                }
+            }
+        }
+        return _instance;
     }
     public bool InsertOne(Student student)
     {
