@@ -16,20 +16,21 @@ public class ArrayCollection : ICollection
         _count = 0;
     }
 
-    public void insertOne(Student student)
+    public string insertOne(Student student)
     {
         if (_count >= _students.Length)
         {
-            throw new InvalidOperationException("Collection is full");
+            return "Collection is full";
         }
         else
         {
             _students[_count] = student;
             _count++;
+            return "Student inserted successfully";
         }
     }
 
-    public void deleteOne(int id)
+    public string deleteOne(int id)
     {
         for (int i = 0; i < _students.Length; i++)
         {
@@ -42,9 +43,10 @@ public class ArrayCollection : ICollection
 
                 _students[_count - 1] = null;
                 _count--;
-                return;
+                return "Student deleted successfully";
             }
         }
+        return "Student not found";
     }
 
     public Student? FindById(int id)
