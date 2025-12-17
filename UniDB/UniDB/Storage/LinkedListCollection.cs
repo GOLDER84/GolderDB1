@@ -71,7 +71,15 @@ public class LinkedListCollection : ICollection
     public double Average(string field)
     {
         if (_students.Count == 0) return 0;
-        return Sum(field) / _students.Count;
+        if (field == "gpa")
+        {
+            return Sum(field) / _students.Count;
+        }
+        else if (field == "id")
+        {
+            return Sum(field) / _students.Count;
+        }
+        return 0;
     }
 
     public List<Student> Filter(string field, string value)

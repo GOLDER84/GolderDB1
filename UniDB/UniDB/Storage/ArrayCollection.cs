@@ -109,8 +109,16 @@ public class ArrayCollection : ICollection
 
     public double Average(string field)
     {
-        double sum = Sum(field);
-        return sum / _count;
+        if (_count == 0) return 0;
+        if (field == "gpa")
+        {
+            return Sum(field) / _count;
+        }
+        else if (field == "id")
+        {
+            return Sum(field) / _count;
+        }
+        return 0;
     }
 
     public List<Student> Filter(string field, string value)
