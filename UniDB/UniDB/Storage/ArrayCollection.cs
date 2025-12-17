@@ -84,14 +84,26 @@ public class ArrayCollection : ICollection
     public double Sum(string field)
     {
         double sum = 0;
-        for (int i = 0; i < _students.Length; i++)
+        if (field == "gpa")
         {
-            if (field == "gpa")
+            for (int i = 0; i < _count; i++)
             {
-                sum += _students[i].Gpa;
+                if (_students[i] != null)
+                {
+                    sum += _students[i].Gpa;
+                }
             }
         }
-
+        else if (field == "id")
+        {
+            for (int i = 0; i < _count; i++)
+            {
+                if (_students[i] != null)
+                {
+                    sum += _students[i].Id;
+                }
+            }
+        }
         return sum;
     }
 

@@ -52,14 +52,19 @@ public class LinkedListCollection : ICollection
     public double Sum(string field)
     {
         double sum = 0;
-        foreach (var student in _students)
+        if (field == "gpa")
         {
-            if (field == "gpa")
+            foreach (var student in _students)
             {
                 sum += student.Gpa;
             }
+        }else if (field == "id")
+        {
+            foreach (var student in _students)
+            {
+                sum += student.Id;
+            }
         }
-
         return sum;
     }
 
