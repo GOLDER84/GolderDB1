@@ -4,7 +4,8 @@ namespace UniDB.Parser;
 
 public class QueryParser
 {
-    public Command Parse(string query)
+    private readonly ExecutionEngine engine = new ExecutionEngine();
+    public void Parse(string query)
     {
         if (string.IsNullOrEmpty(query))
         {
@@ -31,7 +32,8 @@ public class QueryParser
             {
                 throw new NotSupportedException($"Batch command '{batchCommand}' is not supported. Use 'start' or 'execute'.");
             }
-            return new Command(CommandType.Batch, new List<string> { batchCommand });
+            engine.ExecuteQuery(new Command(CommandType.Batch, new List<string> { batchCommand }));
+            return;
         }
 
         string commandPart;
@@ -42,6 +44,7 @@ public class QueryParser
         else
         {
             commandPart = string.Join(".", parts.Skip(2));
+            // commandPart = parts[2];
         }
 
         var commandNameEndIndex = commandPart.IndexOf('(');
@@ -74,23 +77,23 @@ public class QueryParser
                 .Select(p => p.Trim().Trim('"'))
                 .ToList();
         }
-        return new Command(type, parameters);
+        engine.ExecuteQuery(new Command(type, parameters));
     }
 
     private CommandType ParseCommandType(string commandName)
     {
-        return commandName switch
+        return commandName.ToLower() switch
         {
-            "insertOne" => CommandType.InsertOne,
-            "deleteOne" => CommandType.DeleteOne,
-            "findById" => CommandType.FindById,
-            "findAll" => CommandType.FindAll,
+            "insertone" => CommandType.InsertOne,
+            "deleteone" => CommandType.DeleteOne,
+            "findbyid" => CommandType.FindById,
+            "findall" => CommandType.FindAll,
             "filter" => CommandType.Filter,
             "count" => CommandType.Count,
             "sum" => CommandType.Sum,
             "average" => CommandType.Average,
             "import" => CommandType.Import,
-            "beginTransaction" => CommandType.BeginTransaction,
+            "begintransaction" => CommandType.BeginTransaction,
             "commit" => CommandType.Commit,
             "rollback" => CommandType.Rollback,
             _ => throw new NotSupportedException($"Command '{commandName}' is not supported.")
