@@ -57,4 +57,21 @@ public class StorageManagement
         // return _arrayCollection.Count();
         return _linkedListCollection.Count();
     }
+    public double Sum(string field)
+    {
+        // return _arrayCollection.Sum(field);
+        return _linkedListCollection.Sum(field);
+    }
+
+    public double Average(string field)
+    {
+        // return _arrayCollection.Average(field);
+        return _linkedListCollection.Average(field);
+    }
+    public List<Student> Filter(string field , string value)
+    {
+        // return _arrayCollection.Filter(field , value);
+        return _linkedListCollection.Filter(field , value);
+    }
+    
 }
