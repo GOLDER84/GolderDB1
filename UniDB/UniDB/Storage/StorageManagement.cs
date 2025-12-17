@@ -51,4 +51,10 @@ public class StorageManagement
         // return _arrayCollection.FindAll();
         return _linkedListCollection.FindAll();
     }
+
+    public int Count()
+    {
+        // return _arrayCollection.Count();
+        return _linkedListCollection.Count();
+    }
 }
