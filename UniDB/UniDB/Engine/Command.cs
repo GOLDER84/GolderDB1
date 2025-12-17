@@ -7,7 +7,7 @@ public class Command
 
     public Command(CommandType commandType , List<string> parameters)
     {
-        commandType = commandType;
+        CommandType = commandType;
         Parameters = parameters;
     }
 
