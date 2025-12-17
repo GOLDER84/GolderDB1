@@ -4,8 +4,8 @@ namespace UniDB.Storage.Interfaces;
 
 public interface ICollection
 {
-    public void insertOne(Student student);
-    public void deleteOne(int id);
+    public string insertOne(Student student);
+    public string deleteOne(int id);
     public Student? FindById(int id);
     public List<Student> FindAll();
 
@@ -13,5 +13,5 @@ public interface ICollection
     public double Sum(string field);
     public double Average(string field);
     
-    public List<Student> Filter(string field , double value);
+    public List<Student> Filter(string field , string value);
 }
