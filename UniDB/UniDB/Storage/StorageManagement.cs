@@ -46,4 +46,9 @@ public class StorageManagement
         // return _arrayCollection.FindById(id);
         return _linkedListCollection.FindById(id);
     }
+    public List<Student> FindAll()
+    {
+        // return _arrayCollection.FindAll();
+        return _linkedListCollection.FindAll();
+    }
 }
