@@ -12,18 +12,21 @@ public class LinkedListCollection : ICollection
         _students = new LinkedList<Student>();
     }
 
-    public void insertOne(Student student)
+    public string insertOne(Student student)
     {
         _students.AddLast(student);
+        return "Student inserted successfully";
     }
 
-    public void deleteOne(int id)
+    public string deleteOne(int id)
     {
         var student = FindById(id);
         if (student != null)
         {
             _students.Remove(student);
+            return "Student deleted successfully";
         }
+        return "Student not found";
     }
 
     public Student? FindById(int id)
