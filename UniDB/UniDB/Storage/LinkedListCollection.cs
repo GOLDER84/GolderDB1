@@ -1,0 +1,106 @@
+﻿using UniDB.Domain;
+using UniDB.Storage.Interfaces;
+
+namespace UniDB.Storage;
+
+public class LinkedListCollection : ICollection
+{
+    private LinkedList<Student> _students;
+
+    public LinkedListCollection()
+    {
+        _students = new LinkedList<Student>();
+    }
+
+    public string insertOne(Student student)
+    {
+        _students.AddLast(student);
+        return "Student inserted successfully";
+    }
+
+    public string deleteOne(int id)
+    {
+        var student = FindById(id);
+        if (student != null)
+        {
+            _students.Remove(student);
+            return "Student deleted successfully";
+        }
+        return "Student not found";
+    }
+
+    public Student? FindById(int id)
+    {
+        foreach (var student in _students)
+        {
+            if (student.Id == id) return student;
+        }
+
+        return null;
+    }
+
+    public List<Student> FindAll()
+    {
+        return _students.ToList();
+    }
+
+    public int Count()
+    {
+        return _students.Count;
+    }
+
+    public double Sum(string field)
+    {
+        double sum = 0;
+        if (field == "gpa")
+        {
+            foreach (var student in _students)
+            {
+                sum += student.Gpa;
+            }
+        }else if (field == "id")
+        {
+            foreach (var student in _students)
+            {
+                sum += student.Id;
+            }
+        }
+        return sum;
+    }
+
+    public double Average(string field)
+    {
+        if (_students.Count == 0) return 0;
+        if (field == "gpa")
+        {
+            return Sum(field) / _students.Count;
+        }
+        else if (field == "id")
+        {
+            return Sum(field) / _students.Count;
+        }
+        return 0;
+    }
+
+    public List<Student> Filter(string field, string value)
+    {
+        List<Student> result = new List<Student>();
+        if (field == "gpa")
+        {
+            double gpaValue = double.Parse(value);
+            foreach (var student in _students)
+            {
+                if (student.Gpa.Equals(gpaValue)) result.Add(student);
+            }
+        }
+        else if (field == "name")
+        {
+            foreach (var student in _students)
+            {
+                if (student.Name.Equals(value)) result.Add(student);
+            }
+        }
+
+        return result;
+    }
+}

@@ -1,0 +1,15 @@
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\bin\Debug\net8.0\UniDB.exe
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\bin\Debug\net8.0\UniDB.deps.json
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\bin\Debug\net8.0\UniDB.runtimeconfig.json
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\bin\Debug\net8.0\UniDB.dll
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\bin\Debug\net8.0\UniDB.pdb
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\obj\Debug\net8.0\UniDB.GeneratedMSBuildEditorConfig.editorconfig
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\obj\Debug\net8.0\UniDB.AssemblyInfoInputs.cache
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\obj\Debug\net8.0\UniDB.AssemblyInfo.cs
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\obj\Debug\net8.0\UniDB.csproj.CoreCompileInputs.cache
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\obj\Debug\net8.0\UniDB.sourcelink.json
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\obj\Debug\net8.0\UniDB.dll
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\obj\Debug\net8.0\refint\UniDB.dll
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\obj\Debug\net8.0\UniDB.pdb
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\obj\Debug\net8.0\UniDB.genruntimeconfig.cache
+E:\University\Term3\Data Structure\AllProject\UniDB\project01-unidb-GOLDER84\UniDB\UniDB\obj\Debug\net8.0\ref\UniDB.dll
