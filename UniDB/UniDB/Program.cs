@@ -1,4 +1,5 @@
-﻿using UniDB.Parser;
+﻿using UniDB.Benchmark;
+using UniDB.Parser;
 
 public class Program
 {
@@ -8,11 +9,16 @@ public class Program
         Console.WriteLine("Welcome to UniDB!");
         while (true)
         {
-            Console.WriteLine("Enter an option");
+            Console.WriteLine("Enter an option (or 'benchmark' to run benchmark):");
             string option = Console.ReadLine();
             if (option == "exit")
             {
                 break;
+            }
+            else if (option == "benchmark")
+            {
+                var benchmark = new BenchmarkRunner(queryParser);
+                benchmark.RunFullBenchmark();
             }
             else
             {
