@@ -10,7 +10,7 @@ public class ArrayCollection : ICollection
     private Student[] _students;
     private int _count;
 
-    public ArrayCollection(int size = 10000)
+    public ArrayCollection(int size = 100000)
     {
         _students = new Student[size];
         _count = 0;
