@@ -1,6 +1,4 @@
-﻿using UniDB.Domain;
-using UniDB.Engine.Executive_Commands;
-using UniDB.Storage;
+﻿using UniDB.Storage;
 
 namespace UniDB.Engine;
 
@@ -13,17 +11,27 @@ public class TransactionStack
     {
         if (command.CommandType == CommandType.InsertOne)
         {
-            command.CommandType = CommandType.DeleteOne;
-            command.Parameters[1] = "";
-            command.Parameters[2] = "0";
-            _transactions.Push(command);
-        }else if (command.CommandType == CommandType.DeleteOne)
+            var reverseCommand = new Command(CommandType.DeleteOne, new List<string>
+            {
+                command.Parameters[0]
+            });
+            _transactions.Push(reverseCommand);
+        }
+        else if (command.CommandType == CommandType.DeleteOne)
         {
             var student = _storageManagement.FindById(int.Parse(command.Parameters[0]));
-            command.CommandType = CommandType.InsertOne;
-            command.Parameters.Add(student.Name);
-            command.Parameters.Add(student.Gpa.ToString());
-            _transactions.Push(command);
+            if (student == null)
+            {
+                Console.WriteLine("Student not found for rollback.");
+            }
+
+            var reverseCommand = new Command(CommandType.InsertOne, new List<string>
+            {
+                student.Id.ToString(),
+                student.Name,
+                student.Gpa.ToString()
+            });
+            _transactions.Push(reverseCommand);
         }
     }
 

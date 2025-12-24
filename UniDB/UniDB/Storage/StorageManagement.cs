@@ -10,7 +10,7 @@ public class StorageManagement
     
     private ArrayCollection _arrayCollection = new ArrayCollection();
     private LinkedListCollection _linkedListCollection = new LinkedListCollection();
-    private StorageManagement() { }  // Constructor خصوصی
+    private StorageManagement() { }
 
     public static StorageManagement GetInstance()
     {
