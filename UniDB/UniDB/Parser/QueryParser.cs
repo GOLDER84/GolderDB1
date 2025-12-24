@@ -9,13 +9,13 @@ public class QueryParser
     {
         if (string.IsNullOrEmpty(query))
         {
-            throw new ArgumentException("Query cannot be null or empty");
+            Console.WriteLine("Query cannot be null or empty");
         }
 
         var parts = query.Split('.', StringSplitOptions.RemoveEmptyEntries);
         if (parts.Length < 2 || parts[0] != "db")
         {
-            throw new FormatException("Invalid query format. Expected: db.collection.command(...) or db.command()");
+            Console.WriteLine("Invalid query format. Expected: db.collection.command(...) or db.command()");
         }
         
         if (parts.Length == 3 && parts[1] == "batch")
@@ -24,13 +24,13 @@ public class QueryParser
             var cNameEndIndex = cPart.IndexOf('(');
             if (cNameEndIndex == -1 || !cPart.EndsWith(")"))
             {
-                throw new FormatException("Invalid command syntax. Missing parentheses.");
+                Console.WriteLine("Invalid command syntax. Missing parentheses.");
             }
             string batchCommand = cPart.Substring(0, cNameEndIndex); // "start" or "execute"
 
             if (batchCommand != "start" && batchCommand != "execute")
             {
-                throw new NotSupportedException($"Batch command '{batchCommand}' is not supported. Use 'start' or 'execute'.");
+                Console.WriteLine($"Batch command '{batchCommand}' is not supported. Use 'start' or 'execute'.");
             }
             engine.ExecuteQuery(new Command(CommandType.Batch, new List<string> { batchCommand }));
             return;
@@ -50,7 +50,7 @@ public class QueryParser
         var commandNameEndIndex = commandPart.IndexOf('(');
         if (commandNameEndIndex == -1 || !commandPart.EndsWith(")"))
         {
-            throw new FormatException("Invalid command syntax. Missing parentheses.");
+            Console.WriteLine("Invalid command syntax. Missing parentheses.");
         }
 
         string commandName = commandPart.Substring(0, commandNameEndIndex);
