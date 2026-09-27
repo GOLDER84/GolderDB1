@@ -2,7 +2,7 @@
 
 > A lightweight educational NoSQL database engine built from scratch to explore database internals, data structures, indexing, query execution, and clean software architecture.
 
-![Language](https://img.shields.io/badge/Language-C%2B%2B-blue)
+![Language](https://img.shields.io/badge/Language-C%23-blue)
 ![Database](https://img.shields.io/badge/Database-NoSQL-orange)
 ![Architecture](https://img.shields.io/badge/Architecture-Layered-green)
 ![Status](https://img.shields.io/badge/Status-Academic%20Project-purple)
@@ -316,6 +316,7 @@ The goal is to demonstrate how indexing can significantly reduce the amount of d
 
 The project is organized into separate layers and components to keep the database engine modular, maintainable, and easy to extend.
 
+```text
 UniDB/
 │
 ├── Benchmark/
@@ -350,13 +351,13 @@ UniDB/
 ├── Data.csv
 ├── data_50k.csv
 └── Program.cs
-
----
+```
 
 🔄 Request Flow
 
 A typical database request follows the following flow:
 
+```text
 User Query
     │
     ▼
@@ -377,8 +378,9 @@ Storage         Indexes
     │               ├── AVL
     └── LinkedList  ├── Hash
                     └── Inverted
-
+```
 For indexed queries, the execution engine can use an appropriate index instead of performing a full scan over the collection.
+
 
 ---
 
