@@ -96,6 +96,8 @@ public class QueryParser
             "begintransaction" => CommandType.BeginTransaction,
             "commit" => CommandType.Commit,
             "rollback" => CommandType.Rollback,
+            "createindex" => CommandType.CreateIndex,
+            "search" => CommandType.Search,
             _ => throw new NotSupportedException($"Command '{commandName}' is not supported.")
         };
     }

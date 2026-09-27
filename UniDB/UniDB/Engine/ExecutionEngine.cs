@@ -39,7 +39,9 @@ public class ExecutionEngine
             { CommandType.Count, CountHandle },
             { CommandType.Sum, SumHandle },
             { CommandType.Average, AverageHandle },
-            { CommandType.Import, ImportHandle }
+            { CommandType.Import, ImportHandle },
+            { CommandType.CreateIndex, CreateIndexHandle },
+            { CommandType.Search, SearchHandle }
         };
     }
 
@@ -166,20 +168,17 @@ public class ExecutionEngine
 
     public void FilterHandle(Command command)
     {
-        var results = _storageManagement.Filter(command.Parameters[0], command.Parameters[1]);
-        if (results.Count == 0)
+        string field = command.Parameters[0];
+        string value = command.Parameters[1];
+        
+        var students = _storageManagement.Filter(field, value);
+        
+        Console.WriteLine($"Found {students.Count} record(s).");
+        foreach (var s in students)
         {
-            Console.WriteLine("No matching students found.");
-            return;
-        }
-
-        Console.WriteLine("Filtered Student: ");
-        foreach (var student in results)
-        {
-            Console.WriteLine($"ID={student.Id}, Name={student.Name}, GPA={student.Gpa}");
+            Console.WriteLine($"ID: {s.Id}, Name: {s.Name}, GPA: {s.Gpa}");
         }
     }
-
     public void CountHandle(Command command)
     {
         int count = _storageManagement.Count();
@@ -234,4 +233,38 @@ public class ExecutionEngine
 
         Console.WriteLine("Import completed");
     }
+    
+    public void CreateIndexHandle(Command command)
+    {
+        if (command.Parameters.Count < 2)
+        {
+            Console.WriteLine("Error: createIndex requires 2 parameters: field, indexType");
+            return;
+        }
+        string field = command.Parameters[0];
+        string type = command.Parameters[1];
+        
+        string result = _storageManagement.CreateIndex(field, type);
+        Console.WriteLine(result);
+    }
+
+    public void SearchHandle(Command command)
+    {
+        if (command.Parameters.Count < 2)
+        {
+            Console.WriteLine("Error: search requires 2 parameters: field, token");
+            return;
+        }
+        string field = command.Parameters[0];
+        string token = command.Parameters[1];
+
+        var students = _storageManagement.SearchText(field, token);
+        
+        Console.WriteLine($"Found {students.Count} record(s) containing '{token}'.");
+        foreach (var s in students)
+        {
+            Console.WriteLine($"ID: {s.Id}, Name: {s.Name}, GPA: {s.Gpa}");
+        }
+    }
+    
 }

@@ -14,5 +14,7 @@ public enum CommandType
     BeginTransaction,
     Rollback,
     Commit,
-    Batch
+    Batch,
+    CreateIndex,
+    Search
 }

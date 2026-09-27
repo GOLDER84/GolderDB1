@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UniDB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7445d29bbf8daca614c82793dd87a027f4a662ae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d3f1dc2126e5ad7c01d7233b08f9c05adc74f66")]
 [assembly: System.Reflection.AssemblyProductAttribute("UniDB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UniDB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
