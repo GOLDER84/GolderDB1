@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\University\\Term3\\Data Structure\\AllProject\\UniDB\\project01-unidb-GOLDER84\\UniDB\\UniDB\\UniDB.csproj",
+      "projectUniqueName": "E:\\University\\Term3\\Data Structure\\AllProject\\UniDB\\New folder\\GolderDB1\\UniDB\\UniDB\\UniDB.csproj",
       "projectName": "UniDB",
-      "projectPath": "E:\\University\\Term3\\Data Structure\\AllProject\\UniDB\\project01-unidb-GOLDER84\\UniDB\\UniDB\\UniDB.csproj",
+      "projectPath": "E:\\University\\Term3\\Data Structure\\AllProject\\UniDB\\New folder\\GolderDB1\\UniDB\\UniDB\\UniDB.csproj",
       "packagesPath": "C:\\Users\\PcKala.org\\.nuget\\packages\\",
-      "outputPath": "E:\\University\\Term3\\Data Structure\\AllProject\\UniDB\\project01-unidb-GOLDER84\\UniDB\\UniDB\\obj\\",
+      "outputPath": "E:\\University\\Term3\\Data Structure\\AllProject\\UniDB\\New folder\\GolderDB1\\UniDB\\UniDB\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PcKala.org\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.425/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
