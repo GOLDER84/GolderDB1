@@ -171,7 +171,7 @@ A queue is used to maintain the order of batched commands.
 
 ## 📥 Bulk Data Import
 
-GolderDB supports importing student records from CSV files.
+UniDB supports importing student records from CSV files.
 
 Example:
 
